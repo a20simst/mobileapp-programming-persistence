@@ -16,13 +16,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // This method is executed only if there is not already a database in the file `Mountain.db`
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(DatabaseTables.SQL_CREATE_TABLE_MOUNTAIN);
+        sqLiteDatabase.execSQL(DatabaseTables.SQL_CREATE_TABLE_PERSON);
     }
 
     // This method is executed only if the database version has changed, e.g. from 1 to 2
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        sqLiteDatabase.execSQL(DatabaseTables.SQL_DELETE_TABLE_MOUNTAIN);
+        sqLiteDatabase.execSQL(DatabaseTables.SQL_DELETE_TABLE_PERSON);
         onCreate(sqLiteDatabase);
     }
 
