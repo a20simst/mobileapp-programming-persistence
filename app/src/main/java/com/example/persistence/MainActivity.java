@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView showtext;
 
     private long addInfo() {
+
+
         ContentValues values = new ContentValues();
         values.put(DatabaseTables.personInfo.COLUMN_NAME_NAME, String.valueOf(editName.getText()));
         values.put(DatabaseTables.personInfo.COLUMN_NAME_AGE,String.valueOf(editAge.getText()));
@@ -70,6 +72,15 @@ public class MainActivity extends AppCompatActivity {
         read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            List<Person> tmp = fetchPerson();
+            showtext.setText("");
+                for (int i = 0; i < tmp.size() ; i++) {
+                    Person p = tmp.get(i);
+                    Log.d("read==>" , p.getName());
+                    showtext.append(p.getName() + ", " + p.getAge() + ", " + p.getGender() + "\n");
+
+                }
+
 
             }
         });
@@ -77,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addInfo();
+                editAge.setText("");
+                editName.setText("");
+                editGender.setText("");
 
             }
         });
