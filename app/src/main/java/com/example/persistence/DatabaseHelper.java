@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2; // If this is incremented onUpgrade() will be executed
+    private static final int DATABASE_VERSION = 3; // If this is incremented onUpgrade() will be executed
     private static final String DATABASE_NAME = "information.db"; // The file name of our database
 
     DatabaseHelper(Context context) {
