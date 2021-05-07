@@ -12,7 +12,7 @@ class DatabaseTables {
     }
 
     static final String SQL_CREATE_TABLE_PERSON =
-            // "CREATE TABLE mountain (id INTEGER PRIMARY KEY, name TEXT, height INT)"
+
             "CREATE TABLE " + personInfo.TABLE_NAME + " (" +
                     personInfo.COLUMN_NAME_GENDER + " TEXT ," +
                     personInfo.COLUMN_NAME_NAME + " TEXT ," +
